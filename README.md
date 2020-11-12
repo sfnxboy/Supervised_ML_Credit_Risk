@@ -4,11 +4,11 @@ In this project we use Python to build and evaluate a number of machine learning
 
 **Setup dependencies for Windows**
 
-Deactivate active environment ```conda deactivate``` \n
-Update the global conda environment ```conda update conda```
-Press the "Y" key at the prompt
-type ```conda create -n mlenv python=3.7 anaconda```
-Press the "Y" key at the prompt
+Deactivate active environment ```conda deactivate```  
+Update the global conda environment ```conda update conda```  
+Press the "Y" key at the prompt  
+type ```conda create -n mlenv python=3.7 anaconda```  
+Press the "Y" key at the prompt  
 Activate the mlenv environment with ```conda activate mlenv```
 
 **Install the imbalanced-learn package**
