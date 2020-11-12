@@ -21,10 +21,14 @@ Check if the package installed properly with the following code: ```conda list |
 Use the following code to add the machine learning environment to Jupyter Notebook:  
 ```python -m ipykernel install --user --name mlenv```
 
-Explain how a machine learning algorithm is used in data analytics.
-Create training and test groups from a given data set.
-Implement the logistic regression, decision tree, random forest, and support vector machine algorithms.
-Interpret the results of the logistic regression, decision tree, random forest, and support vector machine algorithms.
-Compare the advantages and disadvantages of each supervised learning algorithm.
-Determine which supervised learning algorithm is best used for a given data set or scenario.
-Use ensemble and resampling techniques to improve model performance.
+
+
+## Notes
+
+Explain how a machine learning algorithm is used in data analytics.  
+Create training and test groups from a given data set.  
+Implement the logistic regression, decision tree, random forest, and support vector machine algorithms.  
+Interpret the results of the logistic regression, decision tree, random forest, and support vector machine algorithms.  
+Compare the advantages and disadvantages of each supervised learning algorithm.  
+Determine which supervised learning algorithm is best used for a given data set or scenario.  
+Use ensemble and resampling techniques to improve model performance.  
