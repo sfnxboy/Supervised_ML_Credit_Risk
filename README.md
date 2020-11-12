@@ -13,10 +13,13 @@ Activate the mlenv environment with ```conda activate mlenv```
 
 **Install the imbalanced-learn package**
 
-Now with the mlenv environment activated we can install the imbalanced-learn package with the following code:
+Now with the mlenv environment activated we can install the imbalanced-learn package with the following code:  
 ```conda install -c conda-forge imbalanced-learn```
 
 Check if the package installed properly with the following code: ```conda list | findstr imbalanced-learn```
+
+Use the following code to add the machine learning environment to Jupyter Notebook:  
+```python -m ipykernel install --user --name mlenv```
 
 Explain how a machine learning algorithm is used in data analytics.
 Create training and test groups from a given data set.
