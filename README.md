@@ -25,7 +25,10 @@ Use the following code to add the machine learning environment to Jupyter Notebo
 
 ## Notes
 
-Explain how a machine learning algorithm is used in data analytics.  
+### How a machine learning algorithm is used in data analytics.  
+
+Machine learning is the use of statistical algorithms to perform tasks such as learning from data patterns and making predictions. There are many different models, a model is a mathematical representation of something that happens in the real world.
+
 Create training and test groups from a given data set.  
 Implement the logistic regression, decision tree, random forest, and support vector machine algorithms.  
 Interpret the results of the logistic regression, decision tree, random forest, and support vector machine algorithms.  
