@@ -70,7 +70,9 @@ The **F1 score**, also called the harmonic mean, can be characterized as a singl
 
 ![image](https://user-images.githubusercontent.com/68082808/99191487-fb24a000-273a-11eb-8425-770d827c1c29.png)
 
+### Support Vector Machine (SVM)
 
+Support vector machine (SVM), like logistic regression, is a binary classifier: It can categorize samples into one of two categories (for example, yes or no). SVM categorizes the target variable into one of two classes (for example, approved or denied). However, it differs from logistic regression in several ways. As a linear classifier, the goal of SVM is to find a line that separates the data into two classes. The margins, however, are soft and can make exceptions for outliers. This stands in contrast to the logistic regression model. In logistic regression, any data point whose probability of belonging to one class exceeds the cutoff point belongs to that class; all other data points belong to the other class. An example of running an SVM model in Python can be found [here](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/svm_loan_approver.ipynb).
 
 Create training and test groups from a given data set.  
 Implement the logistic regression, decision tree, random forest, and support vector machine algorithms.  
