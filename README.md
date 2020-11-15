@@ -68,6 +68,9 @@ In summary, there's a fundamental tension between precision and sensitivity. Hig
 
 The **F1 score**, also called the harmonic mean, can be characterized as a single summary statistic of precision and sensitivity. The formula for the F1 score is the following: ```2(Precision * Sensitivity)/(Precision + Sensitivity)```  The F1 score is 0.002. We noted previously that there's usually a trade-off between sensitivity and precision, and that a balance must be struck between the two. A useful way to think about the F1 score is that a pronounced imbalance between sensitivity and precision will yield a low F1 score.
 
+![image](https://user-images.githubusercontent.com/68082808/99191487-fb24a000-273a-11eb-8425-770d827c1c29.png)
+
+
 
 Create training and test groups from a given data set.  
 Implement the logistic regression, decision tree, random forest, and support vector machine algorithms.  
