@@ -40,8 +40,9 @@ The difference between the two is in the outcome. A regression model uses parame
 ![image](https://user-images.githubusercontent.com/68082808/99126443-29d43680-25d4-11eb-8aac-8dfa4888e5dd.png)
 
 
+### Linear Regression vs. Logistic Regression
 
-
+Both models are commonly used in Data Science, however they do have their differences. Linear regression is continuous such that it can take any value within a specified range of values. For example, in [Scikit-learn demo](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/Scikit-learn%20demo.ipynb) we plot a linear regression model that predicts salary based on years of experience. The independent variable, YearsExperience in this case, is a continuous variable. On the otherhand, logistic regression deals with discrete variables. In [logistic regression](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/logistic_regression.ipynb) we generate some data into clusters and train the machine to predict which cluster a new data point may belong to given its parameters.
 
 Create training and test groups from a given data set.  
 Implement the logistic regression, decision tree, random forest, and support vector machine algorithms.  
