@@ -44,6 +44,22 @@ The difference between the two is in the outcome. A regression model uses parame
 
 Both models are commonly used in Data Science, however they do have their differences. Linear regression is continuous such that it can take any value within a specified range of values. For example, in [Scikit-learn demo](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/Scikit-learn%20demo.ipynb) we plot a linear regression model that predicts salary based on years of experience. The independent variable, YearsExperience in this case, is a continuous variable. On the otherhand, logistic regression deals with discrete variables. In [logistic regression](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/logistic_regression.ipynb) we generate some data into clusters and train the machine to predict which cluster a new data point may belong to given its parameters.
 
+### Assess Accuracy, Precision, and Sensitivity
+
+In [diabetes](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/diabetes.ipynb) we measured the performance of the logistic regression model with ```accuracy_score(y_test, y_pred)``` and found the model to be about 0.78% accurate when making predictions. Any given prediction falls under one of two categories: true or false. In the context of whether of not an individual as diabetes, a true prediction would mean that the model categorizes the individual as having diabetes. A false prediction means that the model categorizes the individual as not having diabetes. These are called binary classifications.
+
+- If an individual is diagnosed positive, and they actually are positive, we call the prediction a true positive
+- If an individual is diagnosed positive, and they are actually negative, we call the prediction a false positive
+- If an individual is diagnosed negative, and they actually are positive, we call the prediction a false positive
+- If an individual is diagnosed positive, and they are actually positive, we call the prediction a true negative
+
+The following is a basic confusion matrix:  
+![image](https://user-images.githubusercontent.com/68082808/99191001-e397e800-2737-11eb-9a69-761a096bd827.png)
+
+In machine learning, precision is a measure of how reliable a positive classification is. Precision is calculated as the ratio of true positives. Precision looks to see how much false positives got thrown in the mix.  
+```Precision = TP/(TP + FP)```
+
+
 Create training and test groups from a given data set.  
 Implement the logistic regression, decision tree, random forest, and support vector machine algorithms.  
 Interpret the results of the logistic regression, decision tree, random forest, and support vector machine algorithms.  
