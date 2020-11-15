@@ -74,6 +74,24 @@ The **F1 score**, also called the harmonic mean, can be characterized as a singl
 
 Support vector machine (SVM), like logistic regression, is a binary classifier: It can categorize samples into one of two categories (for example, yes or no). SVM categorizes the target variable into one of two classes (for example, approved or denied). However, it differs from logistic regression in several ways. As a linear classifier, the goal of SVM is to find a line that separates the data into two classes. The margins, however, are soft and can make exceptions for outliers. This stands in contrast to the logistic regression model. In logistic regression, any data point whose probability of belonging to one class exceeds the cutoff point belongs to that class; all other data points belong to the other class. An example of running an SVM model in Python can be found [here](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/svm_loan_approver.ipynb).
 
+### Encode Labels with Pandas
+
+While many datasets contain categorical features (e.g., M or F), machine learning algorithms typically only work with numerical data. Categorical and text data must therefore be converted to numerical data for use in machine learning. [Here](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/categorical-data.ipynb) we are originally given a data set with columns containing categorical data, using the following code we are able to quantify the values:  
+```
+# Binary encoding using Pandas
+loans_binary_encoded = pd.get_dummies(loans_df, columns=["education", "gender"])
+loans_binary_encoded = pd.get_dummies(loans_df, columns=["education", "gender"])
+loans_df["month_num"] = loans_df["month"].apply(lambda x: months_num[x])
+```  
+This is an important step of the proccess, for instance to use Scikit-learn's machine learning algorithms, the text features (month, education, and gender) will have to be converted into numbers. The ```pd.get_dummies()``` method takes in two arguments, the first one specifies the dataframe, and the second on specifies the column(s). 
+
+### Scale and Normalize Data
+
+Data scaling and normalization are steps that are sometimes necessary when preparing data for machine learning. Earlier, we worked with a dataset that had already been scaled for us: the values in each column were rescaled to be between 0 and 1. Such scaling is often necessary with models that are sensitive to large numerical values. This is normally the case with models that measure distances between data points. SVM is one model that usually benefits from scaling.  
+```loans_data_scaled = data_scaler.fit_transform(encoded_df)```
+
+
+
 Create training and test groups from a given data set.  
 Implement the logistic regression, decision tree, random forest, and support vector machine algorithms.  
 Interpret the results of the logistic regression, decision tree, random forest, and support vector machine algorithms.  
