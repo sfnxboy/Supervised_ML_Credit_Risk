@@ -48,10 +48,10 @@ Both models are commonly used in Data Science, however they do have their differ
 
 In [diabetes](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/diabetes.ipynb) we measured the performance of the logistic regression model with ```accuracy_score(y_test, y_pred)``` and found the model to be about 0.78% accurate when making predictions. Any given prediction falls under one of two categories: true or false. In the context of whether of not an individual as diabetes, a true prediction would mean that the model categorizes the individual as having diabetes. A false prediction means that the model categorizes the individual as not having diabetes. These are called binary classifications.
 
-- If an individual is diagnosed positive, and they actually are positive, we call the prediction a true positive
-- If an individual is diagnosed positive, and they are actually negative, we call the prediction a false positive
-- If an individual is diagnosed negative, and they actually are positive, we call the prediction a false positive
-- If an individual is diagnosed positive, and they are actually positive, we call the prediction a true negative
+- If an individual is diagnosed positive, and they actually are positive, we call the prediction a **true positive**
+- If an individual is diagnosed positive, and they are actually negative, we call the prediction a **false positive**
+- If an individual is diagnosed negative, and they actually are positive, we call the prediction a **false positive**
+- If an individual is diagnosed positive, and they are actually positive, we call the prediction a **true negative**
 
 The following is a basic confusion matrix:  
 ![image](https://user-images.githubusercontent.com/68082808/99191523-31fab600-273b-11eb-805a-21a06859cc20.png)
