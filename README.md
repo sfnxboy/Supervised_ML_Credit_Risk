@@ -2,7 +2,7 @@
 
 In this project we use Python to build and evaluate a number of machine learning models to predict credit risk. The ability to predict credit risk with machine learning algorithms helps banks and other financial institutions predict anomalies, reduce risk cases, monitor portfolios, and provide recommendations on what to do in cases of fraud. In this project we will use machine learning to predict credit risk, this may provide a quicker and more reliable loan experience. Machine learning may also provide insight on good candidates for loans, which may lead to lower default rates. We will build and evaluate several machine learning models/algorithms to predict credit risks. Resampling and boosting are some of the techniques we will use to make the most of our models and our data.
 
-The following setup is avoidable if you don't mind importing libraries for every program.
+The following setup is avoidable if you don't mind importing libraries for every program.  
 **Setup dependencies for Windows**
 
 Deactivate active environment ```conda deactivate```  
