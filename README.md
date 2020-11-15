@@ -54,7 +54,7 @@ In [diabetes](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/dem
 - If an individual is diagnosed positive, and they are actually positive, we call the prediction a true negative
 
 The following is a basic confusion matrix:  
-![image](https://user-images.githubusercontent.com/68082808/99191001-e397e800-2737-11eb-9a69-761a096bd827.png)
+![image](https://user-images.githubusercontent.com/68082808/99191067-3e314400-2738-11eb-8bcc-13adc0163ebe.png)
 
 In machine learning, precision is a measure of how reliable a positive classification is. Precision is calculated as the ratio of true positives. Precision looks to see how much false positives got thrown in the mix.  
 ```Precision = TP/(TP + FP)```
