@@ -56,8 +56,17 @@ In [diabetes](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/dem
 The following is a basic confusion matrix:  
 ![image](https://user-images.githubusercontent.com/68082808/99191067-3e314400-2738-11eb-8bcc-13adc0163ebe.png)
 
-In machine learning, precision is a measure of how reliable a positive classification is. Precision is calculated as the ratio of true positives. Precision looks to see how much false positives got thrown in the mix.  
+In machine learning, precision is a measure of how reliable a positive classification is. Precision is calculated as the ratio of true positives. Precision looks to see how the number false positives got thrown in the mix. Ask yourself, "given I was tested positive for diabetes, how likely is it that I have diabetes?"  
 ```Precision = TP/(TP + FP)```
+
+Another way to assess a model's performance is with sensitivity, also called recall. While the term recall is more commonly used in machine learning, the two terms are synonymous and will often be used interchangeably. Instead of looking at the number of false positives the model predicted, recall looks at the number of false negatives that were thrown into the prediction mix. Ask yourself, "given I know I have diabetes, how likely is it that the test will diagnose me as positive?"  
+```Sensitivity = TP/(TP + FN)```
+
+Given our example of testing for diabetes, sensitivity is more important than precision! A test with high sensitivity means few false negatives, though there may be a high number of false positives. In this context, false positives are preferable to false negatives. It’s better to rule out false positive diagnoses than to miss patients who actually have diabetes. Why is high sensitivity more important than precision for a diabetes screening test? It's better to detect everyone who might have diabetes, even if it means a certain number of false positives, than to miss people who do have diabetes. After all, those with a positive result for diabetes can undergo further testing to confirm or rule out diabetes. The false positives in a highly sensitive test are accepted as a cost of doing business. This is not the general rule, the context determines which of the two, precision or sensitivity, is more important. 
+
+In summary, there's a fundamental tension between precision and sensitivity. Highly sensitive tests and algorithms tend to be aggressive, as they do a good job of detecting the intended targets, but also risk resulting in a number of false positives. High precision, on the other hand, is usually the result of a conservative process, so that predicted positives are likely true positives; but a number of other true positives may not be predicted. In practice, there is a trade-off between sensitivity and precision that requires a balancing act between the two.
+
+The **F1 score**, also called the harmonic mean, can be characterized as a single summary statistic of precision and sensitivity. The formula for the F1 score is the following: ```2(Precision * Sensitivity)/(Precision + Sensitivity)```  The F1 score is 0.002. We noted previously that there's usually a trade-off between sensitivity and precision, and that a balance must be struck between the two. A useful way to think about the F1 score is that a pronounced imbalance between sensitivity and precision will yield a low F1 score.
 
 
 Create training and test groups from a given data set.  
