@@ -56,10 +56,10 @@ In [diabetes](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/dem
 The following is a basic confusion matrix:  
 ![image](https://user-images.githubusercontent.com/68082808/99191523-31fab600-273b-11eb-805a-21a06859cc20.png)
 
-In machine learning, precision is a measure of how reliable a positive classification is. Precision is calculated as the ratio of true positives. Precision looks to see how the number false positives got thrown in the mix. Ask yourself, "given I was tested positive for diabetes, how likely is it that I have diabetes?"  
+In machine learning, **precision** is a measure of how reliable a positive classification is. Precision is calculated as the ratio of true positives. Precision looks to see how the number false positives got thrown in the mix. Ask yourself, "given I was tested positive for diabetes, how likely is it that I have diabetes?"  
 ```Precision = TP/(TP + FP)```
 
-Another way to assess a model's performance is with sensitivity, also called recall. While the term recall is more commonly used in machine learning, the two terms are synonymous and will often be used interchangeably. Instead of looking at the number of false positives the model predicted, recall looks at the number of false negatives that were thrown into the prediction mix. Ask yourself, "given I know I have diabetes, how likely is it that the test will diagnose me as positive?"  
+Another way to assess a model's performance is with **sensitivity**, also called recall. While the term recall is more commonly used in machine learning, the two terms are synonymous and will often be used interchangeably. Instead of looking at the number of false positives the model predicted, recall looks at the number of false negatives that were thrown into the prediction mix. Ask yourself, "given I know I have diabetes, how likely is it that the test will diagnose me as positive?"  
 ```Sensitivity = TP/(TP + FN)```
 
 Given our example of testing for diabetes, sensitivity is more important than precision! A test with high sensitivity means few false negatives, though there may be a high number of false positives. In this context, false positives are preferable to false negatives. It’s better to rule out false positive diagnoses than to miss patients who actually have diabetes. Why is high sensitivity more important than precision for a diabetes screening test? It's better to detect everyone who might have diabetes, even if it means a certain number of false positives, than to miss people who do have diabetes. After all, those with a positive result for diabetes can undergo further testing to confirm or rule out diabetes. The false positives in a highly sensitive test are accepted as a cost of doing business. This is not the general rule, the context determines which of the two, precision or sensitivity, is more important. 
@@ -90,11 +90,16 @@ This is an important step of the proccess, for instance to use Scikit-learn's ma
 Data scaling and normalization are steps that are sometimes necessary when preparing data for machine learning. Earlier, we worked with a dataset that had already been scaled for us: the values in each column were rescaled to be between 0 and 1. Such scaling is often necessary with models that are sensitive to large numerical values. This is normally the case with models that measure distances between data points. SVM is one model that usually benefits from scaling.  
 ```loans_data_scaled = data_scaler.fit_transform(encoded_df)```
 
+### Random Forests
 
+The concept of ensemble learning is the process of combining multiple models, like decision tree algorithms, to help improve the accuracy and robustness, as well as decrease variance of the model, and therefore increase the overall performance of the model. In the example below, there are multiple algorithms that are being used to learn and make their predictions based on the data. The final prediction is based on the accumulated predictions from each algorithm:  
+![image](https://user-images.githubusercontent.com/68082808/99197897-4c488a00-2763-11eb-801e-2bb3bdee8c56.png)  
+a random forest algorithm will sample the data and build several smaller, simpler decision trees. Each tree is simpler because it is built from a random subset of features:  
+![image](https://user-images.githubusercontent.com/68082808/99197944-87e35400-2763-11eb-8245-a6870b288edf.png)
 
-Create training and test groups from a given data set.  
-Implement the logistic regression, decision tree, random forest, and support vector machine algorithms.  
-Interpret the results of the logistic regression, decision tree, random forest, and support vector machine algorithms.  
-Compare the advantages and disadvantages of each supervised learning algorithm.  
-Determine which supervised learning algorithm is best used for a given data set or scenario.  
-Use ensemble and resampling techniques to improve model performance.  
+Random forest algorithms are beneficial because they:  
+- Are robust against overfitting as all of those weak learners are trained on different pieces of the data.
+- Can be used to rank the importance of input variables in a natural way.
+- Can handle thousands of input variables without variable deletion.
+- Are robust to outliers and nonlinear data.
+- Run efficiently on large datasets.
