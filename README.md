@@ -39,6 +39,58 @@ Machine learning is the use of statistical algorithms to perform tasks such as l
 The difference between the two is in the outcome. A regression model uses parameters to predict the where an object might fit on a continuous graph. A classification model on the other hand uses parameters to predict which discrete group a new object may be in. In both models a dataset must first be split into features and target. Features are variables used to make a prediction. Target is the parameter we are trying to predict give the features.  
 ![image](https://user-images.githubusercontent.com/68082808/99126443-29d43680-25d4-11eb-8aac-8dfa4888e5dd.png)
 
+### Pre-Process Data
+
+Data preprocessing is a process of preparing raw data and making it suitable for a machine learning model. It is the first step while creating a machine learning model. Real-world data is often noisy, missing values, and perhaps in an unusable format. Thankfully for us there are libraries we can use that can help us prepare the data. Here is the general process:
+
+1. Encode the data that is in the wrong format
+2. Decide what to do with columns missing values
+3. Define the features and target
+4. Split into training and testing sets
+5. Create a StandardScalar instance
+6. Fit the StandardScalar
+7. Scale the data
+
+Your process might generally look like [this](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/Random-Forests.ipynb):  
+```
+# Define features set
+X = df_loans.copy()
+X = X.drop("bad", axis=1)
+X.head()
+
+# Define target vector
+y = df_loans["bad"].values.reshape(-1, 1)
+y[:5]
+
+# Splitting into Train and Test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=78)
+
+# Creating StandardScaler instance
+scaler = StandardScaler()
+
+# Fitting Standard Scaller
+X_scaler = scaler.fit(X_train)
+
+# Scaling data
+X_train_scaled = X_scaler.transform(X_train)
+X_test_scaled = X_scaler.transform(X_test)
+```
+
+### Encode Labels with Pandas
+
+While many datasets contain categorical features (e.g., M or F), machine learning algorithms typically only work with numerical data. Categorical and text data must therefore be converted to numerical data for use in machine learning. [Here](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/categorical-data.ipynb) we are originally given a data set with columns containing categorical data, using the following code we are able to quantify the values:  
+```
+# Binary encoding using Pandas
+loans_binary_encoded = pd.get_dummies(loans_df, columns=["education", "gender"])
+loans_binary_encoded = pd.get_dummies(loans_df, columns=["education", "gender"])
+loans_df["month_num"] = loans_df["month"].apply(lambda x: months_num[x])
+```  
+This is an important step of the proccess, for instance to use Scikit-learn's machine learning algorithms, the text features (month, education, and gender) will have to be converted into numbers. The ```pd.get_dummies()``` method takes in two arguments, the first one specifies the dataframe, and the second on specifies the column(s). 
+
+### Scale and Normalize Data
+
+Data scaling and normalization are steps that are sometimes necessary when preparing data for machine learning. Earlier, we worked with a dataset that had already been scaled for us: the values in each column were rescaled to be between 0 and 1. Such scaling is often necessary with models that are sensitive to large numerical values. This is normally the case with models that measure distances between data points. SVM is one model that usually benefits from scaling.  
+```loans_data_scaled = data_scaler.fit_transform(encoded_df)```
 
 ### Linear Regression vs. Logistic Regression
 
@@ -73,22 +125,6 @@ The **F1 score**, also called the harmonic mean, can be characterized as a singl
 ### Support Vector Machine (SVM)
 
 Support vector machine (SVM), like logistic regression, is a binary classifier: It can categorize samples into one of two categories (for example, yes or no). SVM categorizes the target variable into one of two classes (for example, approved or denied). However, it differs from logistic regression in several ways. As a linear classifier, the goal of SVM is to find a line that separates the data into two classes. The margins, however, are soft and can make exceptions for outliers. This stands in contrast to the logistic regression model. In logistic regression, any data point whose probability of belonging to one class exceeds the cutoff point belongs to that class; all other data points belong to the other class. An example of running an SVM model in Python can be found [here](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/svm_loan_approver.ipynb).
-
-### Encode Labels with Pandas
-
-While many datasets contain categorical features (e.g., M or F), machine learning algorithms typically only work with numerical data. Categorical and text data must therefore be converted to numerical data for use in machine learning. [Here](https://github.com/sfnxboy/Supervised_ML_Credit_Risk/blob/main/demo/categorical-data.ipynb) we are originally given a data set with columns containing categorical data, using the following code we are able to quantify the values:  
-```
-# Binary encoding using Pandas
-loans_binary_encoded = pd.get_dummies(loans_df, columns=["education", "gender"])
-loans_binary_encoded = pd.get_dummies(loans_df, columns=["education", "gender"])
-loans_df["month_num"] = loans_df["month"].apply(lambda x: months_num[x])
-```  
-This is an important step of the proccess, for instance to use Scikit-learn's machine learning algorithms, the text features (month, education, and gender) will have to be converted into numbers. The ```pd.get_dummies()``` method takes in two arguments, the first one specifies the dataframe, and the second on specifies the column(s). 
-
-### Scale and Normalize Data
-
-Data scaling and normalization are steps that are sometimes necessary when preparing data for machine learning. Earlier, we worked with a dataset that had already been scaled for us: the values in each column were rescaled to be between 0 and 1. Such scaling is often necessary with models that are sensitive to large numerical values. This is normally the case with models that measure distances between data points. SVM is one model that usually benefits from scaling.  
-```loans_data_scaled = data_scaler.fit_transform(encoded_df)```
 
 ### Random Forests
 
