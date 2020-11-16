@@ -22,6 +22,41 @@ Check if the package installed properly with the following code: ```conda list |
 Use the following code to add the machine learning environment to Jupyter Notebook:  
 ```python -m ipykernel install --user --name mlenv```
 
+## Credit Risk Analysis
+
+### Overview of Analysis
+
+Using knowledge of data preperation, statistical reasoning, and machine learning we've been able to potentailly solve a read-world problem, credit card risk. Credit risk is an inherently unbalanced classification problem, as good loans easily outnumber risky loans. Therefore, we've employed different techniques to train and evaluate models with unbalanced classes. We use the imbalanced-learn and scikit-learn libraries to build and evaluate models using resampling. Using the credit card credit dataset from LendingClub, a peer-to-peer lending services company, we will use a variety of machine learning algorithms such as ```RandomOverSampler```, ```SMOTE```, ```ClusterCentroids```, and ```SMOTEENN``` to predict credit risk.
+
+### Results
+
+#### Naive Random Oversampling  
+In random oversampling, instances of the minority class are randomly selected and added to the training set until the majority and minority classes are balanced. The model produces an average **f1 score of 75%**. Here are the results:  
+![image](https://user-images.githubusercontent.com/68082808/99299238-efa7a680-2818-11eb-9cd7-53de70959a49.png)
+
+#### SMOTE Oversampling  
+The synthetic minority oversampling technique (SMOTE) is another oversampling approach to deal with unbalanced datasets. In SMOTE, like random oversampling, the size of the minority is increased. The key difference between the two lies in how the minority class is increased in size. As we have seen, in random oversampling, instances from the minority class are randomly selected and added to the minority class. In SMOTE, by contrast, new instances are interpolated. The model produces an average **f1 score of 79%**. Here are the results:  
+![image](https://user-images.githubusercontent.com/68082808/99299464-3f866d80-2819-11eb-8a08-e865f01484c6.png)
+
+#### ClusterCentroids Undersampling  
+Cluster centroid undersampling is akin to SMOTE. The algorithm identifies clusters of the majority class, then generates synthetic data points, called centroids, that are representative of the clusters. The majority class is then undersampled down to the size of the minority class. The model produces an average **f1 score of 60%**. Here are the results:  
+![image](https://user-images.githubusercontent.com/68082808/99299740-a7d54f00-2819-11eb-9405-8a05b687e008.png)
+
+#### SMOTEENN  
+SMOTEENN combines the SMOTE and Edited Nearest Neighbors (ENN) algorithms. First it oversamples the minority class with SMOTE, then it cleans the resulting data with an undersampling strategy. The model produces an average **f1 score of 71%**. Here are the results:  
+![image](https://user-images.githubusercontent.com/68082808/99299952-f8e54300-2819-11eb-9277-a7f38c8e91f2.png)
+
+#### Balanced Random Forest Classifier  
+A balanced random forest randomly under-samples each boostrap sample to balance it. Generally, a random forest algorithm will sample the data and build several smaller, simpler decision trees. Each tree is simpler because it is built from a random subset of features. The model produces an average **f1 score of 91%**. Here are the results:  
+![image](https://user-images.githubusercontent.com/68082808/99300452-9e001b80-281a-11eb-9657-572b26e637ef.png)
+
+#### Easy Ensemble AdaBoost Classifier
+The idea behind Adaptive Boosting, called AdaBoost, is easy to understand. In AdaBoost, a model is trained then evaluated. After evaluating the errors of the first model, another model is trained. This time, however, the model gives extra weight to the errors from the previous model. The purpose of this weighting is to minimize similar errors in subsequent models. Then, the errors from the second model are given extra weight for the third model. This process is repeated until the error rate is minimized.  The model produces an average **f1 score of 91%**. Here are the results:  
+![image](https://user-images.githubusercontent.com/68082808/99300588-d142aa80-281a-11eb-96d1-e011b4c37a54.png)
+
+### Summary
+
+The ensemble algorithms, ie. random forest and AdaBoost, were significantly more precise and accurate than their resampling counterparts. Machine learning algorithms can consider teribytes worth of data and be able to predict where potentially new data points may lie considering the patterns of the original dataset. A credit card company looking to assess risk will be better off using either of the ensemble algorithms to produce the most precise and accurate results. It is important for a 
 
 
 ## Notes
